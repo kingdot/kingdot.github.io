@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="木丁夕雨何的博客"><meta name="keywords" content="木丁夕雨何 王点 wangdian"><title>JavaScript精粹选摘 | 木丁夕雨何</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">JavaScript精粹选摘</h1><a id="logo" href="/.">木丁夕雨何</a><p class="description">镰仓の猫</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">JavaScript精粹选摘</h1><div class="post-meta"><a href="/2019/01/16/JavaScript基础/JavaScript精粹选摘/#comments" class="comment-count"><i id="changyan_count_unit" data-xid="2019/01/16/JavaScript基础/JavaScript精粹选摘/"></i>留言,<i id="changyan_parti_unit" data-xid="2019/01/16/JavaScript基础/JavaScript精粹选摘/"></i>参与</a><p><span class="date">Jan 16, 2019</span><span><a href="/categories/JavaScript/" class="category">JavaScript</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h4 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h4><ul>
+<li>每个&lt;script>标签都提供一个被编译且立即执行的编译单元。因为缺少链接器，JavaScript把他们一起抛入一个公共的全局名字空间中。</li>
+</ul>
+<h4 id="假值，在判断真假的句子中返回false"><a href="#假值，在判断真假的句子中返回false" class="headerlink" title="假值，在判断真假的句子中返回false"></a>假值，在判断真假的句子中返回false</h4><ul>
+<li><p>NaN</p>
+</li>
+<li><p>null</p>
+</li>
+<li><p>undefined</p>
+</li>
+<li><p>‘’</p>
+</li>
+<li><p>0</p>
+</li>
+<li><p>null</p>
+</li>
+</ul>
+<h4 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h4><ol>
+<li><p>属性存取及函数调用 </p>
+<blockquote>
+<p>  . []  ()</p>
+</blockquote>
+</li>
+<li><p>一元运算符  （注意跟加减的区别）</p>
+<blockquote>
+<p>delete new typeof + - ！</p>
+</blockquote>
+</li>
+<li><p>乘法、除法、取模</p>
+<blockquote>
+<p>* / %</p>
+</blockquote>
+</li>
+<li><p>加（连接）、减</p>
+<blockquote>
+<p>+ -</p>
+</blockquote>
+</li>
+<li><p>不等式运算符</p>
+<blockquote>
+<p>‘&gt;=’, ‘&lt;=’,’&gt;’,’&lt;’ </p>
+</blockquote>
+</li>
+<li><p>等式运算符（注意高出逻辑运算符优先级）</p>
+<blockquote>
+<p>=== !==</p>
+</blockquote>
+</li>
+<li><p>逻辑与</p>
+<blockquote>
+<p>&amp;&amp;</p>
+</blockquote>
+</li>
+<li><p>逻辑或</p>
+<blockquote>
+<p>||</p>
+</blockquote>
+</li>
+<li><p>三元运算符</p>
+<blockquote>
+<p>?:</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="函数字面量"><a href="#函数字面量" class="headerlink" title="函数字面量"></a>函数字面量</h4><ul>
+<li>函数字面量定义了函数值，有一个可选的名字，用于递归的调用自己。</li>
+</ul>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><ol>
+<li><p>基本性质</p>
+<ul>
+<li><p>JavaScript简单类型包括数字、字符、布尔值、null、undefined，其他的所有值都是对象。</p>
+</li>
+<li><p>数组、函数、正则表达式都是对象。</p>
+</li>
+<li><p>对象是属性的容器，属性名可以是包含空字符串在内的<strong>任意字符串</strong>,属性值可以是除了undefined之外的任何值。</p>
+</li>
+<li><p>通过原型链，允许对象继承另一对象的属性。使用它能减少对象初始化时间和内存消耗。</p>
+</li>
+</ul>
+</li>
+<li><p>对象字面量</p>
+<ul>
+<li>key可用引号也可以不用，但当key的string含有不合法字符串时，必须用引号</li>
+</ul>
+</li>
+<li><p>对象的检索</p>
+<ul>
+<li>当key不是保留字的时候可以使用obj[keyString]也可以用obj.key访问对应值。</li>
+</ul>
+</li>
+<li><p>对象的原型</p>
+<ul>
+<li><p>每个对象都由隐藏属性__proto__链接到一个原型对象，并且可以从中继承属性。</p>
+</li>
+<li><p>所有通过对象字面量创建的对象的__proto__都指向Object.prototype对象。</p>
+</li>
+<li><p>原型对象只在检索时有用，在更新对象时不受影响，除非显式修改原型对象：obj.__proto__ = balabala 或 obj.prototype = balabala</p>
+</li>
+</ul>
+</li>
+<li><p>反射</p>
+<ul>
+<li>通过反射检查数据的类型，可以通过typeof、hasOwnProperty()等方法。</li>
+</ul>
+</li>
+<li><p>枚举</p>
+<ul>
+<li><p>对于对象，可以使用for…in枚举，会把包括原型里面的属性都遍历。例如：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(key in obj)&#123;</span><br><span class="line">    if(typeof obj.key === &apos;object&apos;)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>- 注意：for(item of items)中，item是值。
+</code></pre><ol start="7">
+<li><p>删除</p>
+<ul>
+<li>可以通过delete关键字删除某个key-value,比如：delete obj.name 或者 delete.__proto__.name</li>
+</ul>
+</li>
+<li><p>减小全局变量污染</p>
+<ul>
+<li><p>只创建一个全局变量（对象），其他所有代码都写在这个对象里面</p>
+</li>
+<li><p>使用闭包（推荐）</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ol>
+<li><p>函数对象</p>
+<ul>
+<li><p>函数也是一个对象，且其<strong>proto</strong>属性连接到Function.prototype，而Function.prototype的<strong>proto</strong>指向Object.prototype;</p>
+</li>
+<li><p>每个函数对象在创建时随带一个prototype属性指向其原型对象。默认情况下，prototype对象里面只有一个constructor属性，指向构造函数（该函数对象）。</p>
+</li>
+<li><p>每个函数在创建时，会有两个附加属性：函数上下文、实现函数行为的代码</p>
+</li>
+</ul>
+</li>
+<li><p>函数字面量：function 可选名字(可选形参){可选语句}</p>
+</li>
+<li><p>函数调用方式：见<a href="http://note.youdao.com/noteshare?id=2e611fb94dbb28e4ae1cd3ebd5ae4ef3" target="_blank" rel="noopener">this相关问题</a></p>
+</li>
+<li><p>函数参数: 可以定义一个无参函数，但是在调用时传递一些参数，然后在函数体内通过arguments对象获取</p>
+</li>
+<li><p>函数返回:</p>
+<ul>
+<li><p>一个函数总会返回一个值，如果没有指定则返回undefined</p>
+</li>
+<li><p>如果函数在前面加new调用，且返回值不是一个对象，则返回该this</p>
+</li>
+</ul>
+</li>
+<li><p>函数执行异常</p>
+<ul>
+<li><p>可以随时在语句中使用throw关键字，后面跟一个自定义的Exception，这个Exception可以是一个简单值，也可以是一个自定义对象。</p>
+</li>
+<li><p>throw语句用来抛出一个用户自定义的异常。<strong>当前函数的执行将被停止</strong>（throw之后的语句将不会执行），并且控制将被传递到调用堆栈中的第一个catch块。<strong>不管throw后面抛出的是啥，一旦执行，且调用者函数中没有catch块，程序将会报错且终止</strong>。</p>
+</li>
+<li><p>可以通过继承异常基类Error自定义异常类型,可以添加除了Error.prototype.message和Error.prototype.name之外的属性和方法。</p>
+</li>
+</ul>
+</li>
+<li><p>模块</p>
+<ul>
+<li><p>我们可以通过使用函数和闭包实现模块，模块是一个提供接口却隐藏状态与是实现的函数或对象。</p>
+</li>
+<li><p>模块的一般形式为：<strong>一个定义了私有变量和函数的函数，利用闭包创建可以访问私有变量和函数的特权方法，最后返回这个特权函数或者把他们保存到一个可以访问到的地方(比如挂在global对象上)</strong>。</p>
+</li>
+</ul>
+</li>
+<li><p>级联</p>
+<ul>
+<li><p>不带有return语句的函数默认返回undefined</p>
+</li>
+<li><p>对于修改某个对象的状态这样的函数，可以使其返回this而不是undefined，就可以启用级联。也即是链式调用。</p>
+</li>
+</ul>
+</li>
+<li><p>套用</p>
+<ul>
+<li><p>函数也是值，从而可以像使用值的方式去操纵函数。</p>
+</li>
+<li><p>套用允许我们将函数与传递给它的参数相结合产生一个新的函数。</p>
+</li>
+</ul>
+</li>
+<li><p>记忆</p>
+<ul>
+<li>利用闭包特性，将函数的历史执行结果以（参数：函数返回值）的形式用数组或对象保存在函数内部，下次再输入某个参数时，首先判断该参数是否已经被计算过，如果是则直接返回保存的结果。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wrapper</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = result[i];</span><br><span class="line">        <span class="keyword">if</span>(!temp)&#123;</span><br><span class="line">            <span class="comment">// 正常执行计算</span></span><br><span class="line">            result[i] = 计算结果;</span><br><span class="line">            <span class="keyword">return</span> 计算结果;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继续抽象，使缓存可以自定义，执行函数体也可以自定义(不支持递归)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compute</span>(<span class="params">store, func</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> store[i] !== <span class="string">'某类型'</span>)&#123;</span><br><span class="line">            store[i] = func(i);</span><br><span class="line">            <span class="keyword">return</span> store[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> store[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">===============================================================</span><br><span class="line"><span class="comment">// 如果要考虑递归的情况，做如下修改：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">comupute</span>(<span class="params">store, func</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> comp = <span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">typeof</span> store[i] !== <span class="string">'某类型'</span>)&#123;</span><br><span class="line">            store[i] = func(comp, i);</span><br><span class="line">            <span class="keyword">return</span> store[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> store[i];</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> comp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 求和时的func可以这么定义</span></span><br><span class="line"><span class="keyword">var</span> store = [<span class="number">0</span>,<span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params">fun1, n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fun1(n<span class="number">-1</span>) + fun1(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 求阶乘可以这么定义</span></span><br><span class="line"><span class="keyword">var</span> store = [<span class="number">1</span>,<span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> func = functin(fun1, n)&#123;</span><br><span class="line">    <span class="keyword">return</span> n*fun1(n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>JavaScript是一门弱类型语言，从不需要类型转换，对象的起源是无关紧要的，重要的是这个对象能做什么。在基于类的语言中，对象是类的实例，并且类可以从另一个类继承。JavaScript是一门基于原型的语言，这意味着<strong>对象直接从其他（原型）对象继承</strong>。</p>
+<ul>
+<li><p>伪类</p>
+<ul>
+<li><p>JavaScript的某些像类的语法隐蔽了他的原型机制。<strong>他不让对象直接直接从其他对象继承，反而插入了一个中间层，从而使构造器函数产生对象</strong>。参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new" target="_blank" rel="noopener">new操作符</a></p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PS：不管是不是显式继承，只要是<span class="keyword">new</span>产生对象，内部都使用了原型机制。</span><br><span class="line"></span><br><span class="line">当代码 <span class="keyword">new</span> Foo(...) 执行时，会发生以下事情：</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>、一个继承自 Foo.prototype 的新对象被创建。</span><br><span class="line">    &gt; <span class="keyword">var</span> that = <span class="built_in">Object</span>.creat(Foo.prototype); <span class="comment">// 到这里的时候，其实已经完成了一个对象继承另一个对象。</span></span><br><span class="line"><span class="number">2</span>、使用指定的参数调用构造函数 Foo ，并将 <span class="keyword">this</span> 绑定到新创建的对象。<span class="keyword">new</span> Foo 等同于 <span class="keyword">new</span> Foo()，也就是没有指定参数列表，Foo 不带任何参数调用的情况。</span><br><span class="line">    &gt; <span class="keyword">var</span> other = Foo.call(that, <span class="built_in">arguments</span>); <span class="comment">// 构造函数的返回值</span></span><br><span class="line"><span class="number">3</span>、由构造函数返回的对象就是 <span class="keyword">new</span> 表达式的结果。如果构造函数没有显式返回一个对象，则使用步骤<span class="number">1</span>创建的对象。（一般情况下，构造函数不返回值，但是用户可以选择主动返回对象，来覆盖正常的对象创建步骤）。</span><br><span class="line">    &gt; <span class="keyword">return</span> (<span class="keyword">typeof</span> other === <span class="string">'object'</span> &amp;&amp; other) || that;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">当一个函数对象被创建时，<span class="built_in">Function</span>构造器产生的函数对象会运行类似这样的一些代码：</span><br><span class="line"></span><br><span class="line">    &gt; <span class="keyword">this</span>.prototype = &#123;<span class="attr">constructer</span>: <span class="keyword">this</span>&#125;; </span><br><span class="line">    <span class="comment">// 新函数对象被赋予一个prototype属性，其值是包含一个constructor属性且属性值为该新函数对象。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>对象说明符</p>
+<p>  很多时候，构造器要接受一大堆参数，因此在<strong>编写构造器时使其接受一个简单的对象说明符</strong>可能会更加友好。那个对象包含了将要构建的对象规格说明。</p>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">比如：<span class="keyword">var</span> Foo = <span class="function"><span class="keyword">function</span>(<span class="params">a,b,c,d</span>)</span>&#123;&#125; </span><br><span class="line">可以更改为：<span class="keyword">var</span> Foo = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    param1: a,</span></span></span><br><span class="line"><span class="function"><span class="params">    param2: b,</span></span></span><br><span class="line"><span class="function"><span class="params">    param3: c,</span></span></span><br><span class="line"><span class="function"><span class="params">    param4: d</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>  如果构造器会聪明的使用默认值，则传入的一些参数可以忽略掉。</p>
+</li>
+</ul>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>数组是一段线性分配的内存，他通过计算偏移访问其中的元素。JavaScript并没有提供数组这种数据结构，而是提供了一种拥有一些类数组特性的对象。</p>
+<p>它<strong>把数组的下标转变成字符串，用其作为属性</strong>。他明显比真正的数组慢，但它可以方便的使用。属性的检索和更新方式与对象一模一样，除了<strong>有一个可以用整数作为属性名的特性</strong>外。数组有他们自己的字面量格式，数组也有一套非常有用的内置方法。</p>
+<ul>
+<li><p>关于数组长度：</p>
+<ol>
+<li><p>每个数组都有一个<strong>length属性</strong>，并且length是没有上界的，当你用一个大于或等于length的数字作为下标来保存一个元素，那么length将增大来容纳新元素，不会发生数组越界。</p>
+</li>
+<li><p>length属性的值是这个数组的最大整数属性名加上1，她不一定等于数组里面的属性的个数。</p>
+</li>
+<li><p>[]运算符会将他的表达式转换成一个字符串，如果该表达式有toString方法，就使用该方法的值。这个字符串将被用作属性名。如果则个字符串看起来像一个大于等于这个数组当前的length且小于4294967295的正整数，那么这个数组的length就会被重新设置为新的下标加1。</p>
+</li>
+<li><p>可以直接设置length的值，设置更大的length无须给数组分配更多的空间。更小的length会将下标大于等于新length的属性删除。可以通过把下标指定为一个数组当前的length来附加一个新元素到该数组尾部。push方法也可以。</p>
+</li>
+</ol>
+</li>
+<li><p>删除数组元素</p>
+<ol>
+<li><p>由于JavaScript数组其实就是对象，所以可以使用delete运算符从数组中移除元素：delete nums[2];</p>
+</li>
+<li><p>然而，delete运算符会在数组中遗留一个空洞，被删除的属性和值都消失不见，但length不变。因为排在他后面的元素保留了他们最初的下标。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">delete</span> a[<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// [1,empty,3,4]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为了解决以上问题，可以使用数组的splice方法，他可以删除某些元素并将他们替换成其他的元素，第一个参数是起始位置下标，第二个参数是要删除的元素个数，删除位后面的元素会被删除并且以一个新的键值重新插入，大型数组效率低；当slice的参数为空时，默认返回一个长度和原数组相同的新数组。 </p>
+</li>
+</ol>
+</li>
+<li><p>数组的枚举</p>
+<p>  因为数组其实就是对象，所以for in语句可以用来遍历一个数组的所有属性。不幸的是，for in无法保证无序，并且还有可能意外得到原型链中的属性。</p>
+<p>  解决方案：</p>
+<ol>
+<li><p>使用传统的for循环:</p>
+<blockquote>
+<p>for(var i = 0; i &lt; arr.length; i++){ console.log(arr[i]); }</p>
+</blockquote>
+</li>
+<li><p>for…of语句在<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols" target="_blank" rel="noopener">迭代对象</a>（包括Array，Map，Set，String，TypedArray，<strong>arguments</strong> 对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句。这种方法只会迭代迭代器中产生的数据。</p>
+</li>
+</ol>
+</li>
+<li><p>使用数组还是对象</p>
+<ol>
+<li><p>当属姓名是小而连续的整数时，使用数组，否则使用对象。</p>
+</li>
+<li><p>使用typeof array会返回’object’,并不能判断出类型，因此使用：</p>
+<blockquote>
+<p>typeof arr === ‘object’ &amp;&amp; arr.constructor === Array    </p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>数组的方法</p>
+<p>  Javascript提供了一套用于数组的方法，这些方法是被存储在Array.prototype中的函数。</p>
+</li>
+<li><p>多维数组</p>
+<p>  JavaScript没有多维数组，但它支持元素为数组的数组</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.matrix = <span class="function"><span class="keyword">function</span>(<span class="params">m, n, initial</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a, i, j, mat = [];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">        a = [];</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">            a[j] = initial;</span><br><span class="line">        &#125;</span><br><span class="line">        matrix[i] = a; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="正则表达式（对象）"><a href="#正则表达式（对象）" class="headerlink" title="正则表达式（对象）"></a>正则表达式（对象）</h4><p>JavaScript同样对正则表达式有很好的支持，<strong>RegExp</strong>是JavaScript中的内置类，通过使用RegExp，用户可以自己定义<strong>模式</strong>来对字符串进行匹配。</p>
+<p>JavaScript中的String对象的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="noopener">replace方法</a>也支持使用正则表达式对串进行匹配。</p>
+<ul>
+<li><p>元字符与特殊字符</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">元字符  含义</span><br><span class="line">^       串的开始</span><br><span class="line">$       串的结束</span><br><span class="line">*       零到多次匹配</span><br><span class="line">+       一到多次匹配</span><br><span class="line">?       零或一次匹配</span><br><span class="line">\b      单词边界</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>范围及重复</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">范围：</span><br><span class="line">    标志符  含义</span><br><span class="line">    […]     在集合中的任一个字符</span><br><span class="line">    [^…]    不在集合中的任一个字符</span><br><span class="line">    .       除\n 之外的任一个字符</span><br><span class="line">    \w      所有的单字，包括字母，数字及下划线</span><br><span class="line">    \W      不包括所有的单字， \w 的补集</span><br><span class="line">    \s      所有的空白字符，包括空格，制表符</span><br><span class="line">    \S      所有的非空白字符</span><br><span class="line">    \d      所有的数字</span><br><span class="line">    \D      所有的非数字</span><br><span class="line">    \b      退格字符</span><br><span class="line"></span><br><span class="line">重复：</span><br><span class="line">    标记    含义</span><br><span class="line">    *       0次或多次</span><br><span class="line">    +       1次或多次</span><br><span class="line">    ?       0次或1次</span><br><span class="line">    &#123;n&#125;     重复 n 次</span><br><span class="line">    &#123;n,&#125;    重复 n 或更多次</span><br><span class="line">    &#123;n,m&#125;   重复至少 n 次，至多 m 次</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分组与引用</p>
+<p>括号的3个作用：</p>
+<ol>
+<li><p>将子表达式表记起来，以区别于其他表达式</p>
+</li>
+<li><p>括号用来分组，当正则表达式执行完成之后，与之匹配的文本将会按照规则填入各个分组。</p>
+</li>
+<li><p>引用分组内容。即在同一个表达式中，后边的式子可以引用前边匹配的文本。</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello, world"</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'fair enough'</span>;</span><br><span class="line">均为合法字符，我们可能会设计出这样的表达式来匹配该声明：</span><br><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/['"][^'"]*['"]/</span>;</span><br><span class="line">看来没有什么问题，但是如果用户输入：</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'hello, world";</span></span><br><span class="line"><span class="string">var str = "hello, world'</span>;</span><br><span class="line">我们的正则表达式还是可以匹配，注意这两个字符串两侧的引号不匹配！ 我们需要的是，前</span><br><span class="line">边是单引号，则后边同样是单引号，反之亦然。 因此，我们需要知道前边匹配的到底是“单”</span><br><span class="line">还是“双”。这里就需要用到引用， JavaScript 中的引用使用斜杠加数字来表示，如\<span class="number">1</span> 表</span><br><span class="line">示第一个分组(括号中的规则匹配的文本)， \<span class="number">2</span> 表示第二个分组，以此类推。 因此我们就设</span><br><span class="line">计出了这样的表达式：</span><br><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/(['"])[^'"]*\1/</span>;</span><br><span class="line">在我们新设计的这个语言中，为了某种原因，在单引号中我们不允许出现双引号，同样，在</span><br><span class="line">双引号中也不允许出现单引号，我们可以稍作修改即可完成：</span><br><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/(['"])[^\1]*\1/</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>使用正则表达式</p>
+<ul>
+<li><p>创建正则表达式</p>
+<ol>
+<li><p>使用字面量：</p>
+<blockquote>
+<p>var regex = /pattern/[switchs];</p>
+</blockquote>
+</li>
+<li><p>使用RegExp对象：</p>
+<blockquote>
+<p>var regex = new RegExp(“pattern”, switchs)</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>switchs有以下三种（可以组合使用）：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">修饰符  描述</span><br><span class="line">i       忽略大小写开关</span><br><span class="line">g       全局搜索开关</span><br><span class="line">m       多行搜索开关(重定义^与$的意义)</span><br><span class="line">eg:</span><br><span class="line">    <span class="keyword">var</span> pattern = <span class="regexp">/^javascript/</span>;</span><br><span class="line">    print(pattern.test(<span class="string">"java\njavascript"</span>));<span class="comment">//false</span></span><br><span class="line">    pattern = <span class="regexp">/^javascript/m</span>;</span><br><span class="line">    print(pattern.test(<span class="string">"java\njavascript"</span>));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>RegExp对象的方法：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">方法名  描述</span><br><span class="line">test()  测试串中是否有合乎模式的匹配，不关心匹配结果，返回boolean</span><br><span class="line">exec()  对串进行匹配，返回需要分组的信息。</span><br><span class="line">compile() 编译正则表达式，用来改变表达式的模式，这个过程与重新声明一个正则表达式对象的作用相同</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String对象中也有多个方法支持正则表达式操作：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">方法    作用</span><br><span class="line">match(pattern)   匹配正则表达式，返回匹配数组</span><br><span class="line">replace(pattern, newStr)     替换</span><br><span class="line">split(pattern)   分割,返回一个数组</span><br><span class="line">search(pattern)  查找，返回首次发现的位置</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>JavaScript包含了少量用在标准类型上面的标准方法。</p>
+<ul>
+<li><p>Array</p>
+<ul>
+<li><p>arr.concat(item):</p>
+<p>  返回一个新数组。它包含arr的浅复制（值拷贝），并将一个或多个item附加在其后，如果item是数组，则对每个元素使用arr.push(item)方法。</p>
+</li>
+<li><p>arr.join(separator)：</p>
+<p>  把一个array构造成一个字符串。首先将每个元素构造成一个字符串，并用一个separator为分隔符把他们连接在一起。默认的分隔符是’,’。为了实现无分隔符的连接，可以使用空字符串作为separator。</p>
+<p>  把大量的需要连接的字符串放到一个数组中，然后使用join方法通常比使用’+’号快。</p>
+</li>
+<li><p>arr.pop / arr.push : 数组像堆栈一样工作</p>
+</li>
+<li><p>arr.shift / arr.push : 数组像队列一样工作</p>
+</li>
+<li><p>arr.unshift : 从头部插入数据</p>
+</li>
+<li><p>arr.reverse : 逆置数组元素，返回当前工作数组</p>
+</li>
+<li><p>arr.slice(start, end) : 浅复制从start(arr[start])到end(不包括arr[end])的元素于一个新的数组中返回。</p>
+</li>
+<li><p>arr.splice(start, deleteCount, item…) : 从arr中<strong>移除一个或多个元素</strong>，并用新的item替换他们,返回一个包含被移除元素的数组。</p>
+</li>
+<li><p>arr.sort(compareFunction):</p>
+<p>  JavaScript默认的比较函数会将数组元素转换成字符转后按字典序比较。<br>  自定义比较函数，接收两个参数，如果这两个参数相等则返回0，如果第一个应该排在前面则返回一个负数，如果第二个应该排在前面则返回一个整数。</p>
+</li>
+</ul>
+</li>
+<li><p>Number</p>
+<ul>
+<li><p>number.toFixed(fractionDigits)    </p>
+<p>  把number转换成一个十进制数形式的字符串，可选参数fraction控制小数点后的数字位数，他的值必须在0-20之间，默认为0。</p>
+</li>
+<li><p>number.toPercision(precision)</p>
+<p>  把number转换成一个十进制数形式的字符串，可选参数precision控制有效数组的位数，他的值必须在0-21之间。</p>
+</li>
+<li><p>number.toString(redix)</p>
+<p>  把number转换成一个以radix进制形式的字符串，radix必须在2-36之间。</p>
+</li>
+</ul>
+</li>
+<li><p>Object</p>
+<ul>
+<li>obj.hasOwnProperty(name): 判断对象自身是否包含name属性，不会查找原型链。</li>
+</ul>
+</li>
+<li><p>String</p>
+<ul>
+<li><p>str.charAt(position): 返回position处的字符(串，因为JavaScript并没有character类型)。不合法的position返回空字符串。</p>
+</li>
+<li><p>str.concat(str…): 连接字符串，很少使用，并没有’+’方便。</p>
+</li>
+<li><p>str.indexOf(searchStr, position): 从可选的指定位置查找字符串，返回第一个匹配字符的位置，否则返回-1。</p>
+</li>
+<li><p>str.lastIndexOf(searchStr, position): 倒着找</p>
+</li>
+<li><p>str.match</p>
+</li>
+<li><p>str.replace</p>
+</li>
+<li><p>str.search(pattern): 同indexOf，忽略g参数 </p>
+</li>
+<li><p>str.slice(start, end): 浅复制</p>
+</li>
+<li><p>str.split(separator, llimit): 把str分割成字符数组，limit为数组的长度。</p>
+</li>
+<li><p>str.subString: 同slice，只是不能处理负参数，使用slice替换它</p>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="tags"><a href="/tags/JavaScript核心/">JavaScript核心</a></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2019/01/16/JavaScript基础/JavaScript深拷贝、浅拷贝/" class="pre">JavaScript深拷贝、浅拷贝</a><a href="/2019/01/16/JavaScript基础/Object构造函数的常用方法/" class="next">Object构造函数的常用方法</a></div><div id="comments"><div id="SOHUCS" sid="2019/01/16/JavaScript基础/JavaScript精粹选摘/"></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#语句"><span class="toc-text">语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#假值，在判断真假的句子中返回false"><span class="toc-text">假值，在判断真假的句子中返回false</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#运算符优先级"><span class="toc-text">运算符优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数字面量"><span class="toc-text">函数字面量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象"><span class="toc-text">对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数"><span class="toc-text">函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#正则表达式（对象）"><span class="toc-text">正则表达式（对象）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/02/23/golang/golang基础/">golang基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/23/杂项/Git常用操作/">Git 常用操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/01/React相关/React新特性/">react新特性</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/20/JavaScript进阶/如何监听div的高宽改变/">如何监听div的高宽改变</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/20/React相关/为什么使用immutable.js/">为什么使用immutable.js（不可变）？</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/20/React相关/从createStore和applyMiddleWare看redux 中间件的原理/">从createStore和applyMiddleWare看redux 中间件的原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/20/React相关/react视图更新过程/">react视图更新过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/14/CSS/深入理解css权重/">深入理解css权重</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/14/JavaScript基础/不能使用箭头函数的场景/">不能使用箭头函数的场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/14/JavaScript基础/从输入url到页面展现发生了什么/">从输入url到页面展现发生了什么</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">44</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript基础/">JavaScript基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React相关/">React相关</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/go/">go</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/">杂项</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架相关/">框架相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/css常用/" style="font-size: 15px;">css常用</a> <a href="/tags/css权重/" style="font-size: 15px;">css权重</a> <a href="/tags/ES6，ES7新特性/" style="font-size: 15px;">ES6，ES7新特性</a> <a href="/tags/Spring详解/" style="font-size: 15px;">Spring详解</a> <a href="/tags/JavaScript核心/" style="font-size: 15px;">JavaScript核心</a> <a href="/tags/JavaScript基础/" style="font-size: 15px;">JavaScript基础</a> <a href="/tags/JavaScript进阶/" style="font-size: 15px;">JavaScript进阶</a> <a href="/tags/监听元素高宽/" style="font-size: 15px;">监听元素高宽</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/redux/" style="font-size: 15px;">redux</a> <a href="/tags/golang基础/" style="font-size: 15px;">golang基础</a> <a href="/tags/http、https/" style="font-size: 15px;">http、https</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/分布式/" style="font-size: 15px;">分布式</a> <a href="/tags/npm基础/" style="font-size: 15px;">npm基础</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/性能优化/" style="font-size: 15px;">性能优化</a> <a href="/tags/react原理/" style="font-size: 15px;">react原理</a> <a href="/tags/框架比较/" style="font-size: 15px;">框架比较</a> <a href="/tags/移动端/" style="font-size: 15px;">移动端</a> <a href="/tags/排序/" style="font-size: 15px;">排序</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="https://www.google.com/" title="谷歌" target="_blank">谷歌</a><ul></ul><a href="https://www.baidu.com/" title="百度" target="_blank">百度</a><ul></ul><a href="https://docschina.org/" title="印象中文" target="_blank">印象中文</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p></p><span>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i> 次</i></span><span>|</span><span>Copyright &copy;<a href="/." rel="nofollow">木丁夕雨何.</a></span></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?281cc941ca205b4ebca856d71ae45a55";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||head).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script><script>window._config = { showScore: true };
+(function(){ 
+  var appid = 'cytF5aDWy'; 
+  var conf = 'prod_0650efe38e465b0e4820ce8d9c386815'; 
+  var width = window.innerWidth || document.documentElement.clientWidth; 
+  var nodes =document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+  if (/(Android|iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) && width < 750) {  
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+  }
+  else { 
+    var loadJs=function(d,a){
+      var b=document.createElement("script");b.setAttribute("type","text/javascript");
+      b.setAttribute("charset","UTF-8");
+      b.setAttribute("src",d);
+      if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+      nodes.appendChild(b)
+    };
+    loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); 
+  } 
+  var loadCss = function(cssString){  
+    var style=document.createElement("style");  
+    style.setAttribute("type", "text/css");  
+    if(style.styleSheet){// IE  
+        style.styleSheet.cssText = cssString;  
+    } else {// w3c  
+        var cssText = document.createTextNode(cssString);  
+        style.appendChild(cssText);  
+    }
+    nodes.appendChild(style);
+  }
+  window.onload=function(){loadCss('.module-hot-topic,.module-cmt-float-bar{display:none!important}#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .cbox-prompt-w span.prompt-empty-w,#SOHUCS #SOHU_MAIN .module-cmt-float-bar .wrap-cont-w .cont-form-w .form-text-w span.text-null,#SOHUCS #SOHU_MAIN .module-cmt-float-bar .wrap-cont-w .cont-minwidth-w div.cont-comment-w a.comment-link-w,#SOHUCS #SOHU_MAIN .module-cmt-float-bar .wrap-cont-w .cont-minwidth-w div.cont-comment-w span.comment-text-w,#SOHUCS #SOHU_MAIN .module-cmt-footer .section-service-w div.service-wrap-w a:hover,#SOHUCS #SOHU_MAIN .module-cmt-header .section-cbox-w .block-head-w div.header-login,#SOHUCS #SOHU_MAIN .module-cmt-header .section-title-w .title-user-w .user-wrap-w span.wrap-name-w,#SOHUCS #SOHU_MAIN .module-cmt-list .action-click-gw span.click-disable-eg a em.icon-name-bg,#SOHUCS #SOHU_MAIN .module-cmt-list .block-title-gw ul li div.title-name-gw,#SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .cmt-list-number .comment-number span.cy-number,#SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .cmt-list-number span.comment-number,#SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .type-lists li.active,#SOHUCS #SOHU_MAIN .module-cmt-list .msg-wrap-gw .wrap-action-gw .action-click-gw span a:hover,#SOHUCS #SOHU_MAIN .module-cmt-list .picture-box-gw div.box-action-gw a:hover,#SOHUCS #SOHU_MAIN .module-cmt-list .wrap-action-gw .action-click-gw span a:hover em.icon-name-bg,#SOHUCS #SOHU_MAIN .module-cmt-list .wrap-user-gw span.user-name-gw a{color:#40759b!important}#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .post-wrap-border-t div.post-wrap-border-t-r,#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w div.post-wrap-border-l,#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w div.post-wrap-border-r{display:none!important}#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .post-wrap-border-t div.post-wrap-border-t-l{background:#FFF!important;top:-2px!important}#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .action-function-w .uploading-wrapper-dw div.wrapper-image-dw,#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w div.post-wrap-main,#SOHUCS #SOHU_MAIN .module-cmt-float-bar .wrap-cont-w .cont-form-w div.form-text-w,#SOHUCS #SOHU_MAIN .module-cmt-header .section-cbox-w .block-head-w div.header-login,#SOHUCS #SOHU_MAIN .module-cmt-list .module-cmt-box .post-wrap-w div.post-wrap-main{border:1px solid #e6e6e6!important;border-radius:20px 20px 20px 20px;margin:0!important}#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .action-issue-w .issue-btn-w a .btn-fw{width:130px!important;height:34px!important;line-height:33px!important;font-size:17px!important;background:#5483b1!important;border-radius:20px!important;color:#FFF!important;-webkit-box-shadow:0 -1px 4px #5483b1 inset;box-shadow:0 -1px 10px #5483b1 inset}#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .action-issue-w .issue-btn-w a .btn-fw:before{content:"发表评论"}#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .action-issue-w .issue-btn-w a:hover .btn-fw{color:#40759b!important;background:#FFF!important}#SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .type-lists li{background:none!important;border-bottom:1px solid #e6e6e6}#SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .type-lists li.active{border:1px solid #e6e6e6;border-radius:10px 10px 0 0;border-bottom:none}#SOHUCS #SOHU_MAIN .module-cmt-list .block-title-gw ul li .title-name-gw div.title-name-gw-tag{background:#5483b1!important;border-radius:3px}#SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type div.cmt-list-border{background-color:#e6e6e6!important}#SOHUCS #SOHU_MAIN .module-cmt-notice ul.nt-list li.nt-item{border:1px solid #e6e6e6!important}#SOHUCS #SOHU_MAIN .module-cmt-notice ul.nt-list li.nt-item .nt-logo{text-align:center;line-height:40px;border-radius:50%!important;background:#e6e6e6!important}#SOHUCS #SOHU_MAIN .module-cmt-notice ul.nt-list li.nt-item .nt-logo:before{content:"畅";font-size:22px;color:#FFF}#SOHUCS #SOHU_MAIN .module-cmt-notice ul.nt-list li.nt-item a.nt-text,#SOHUCS #SOHU_MAIN .module-cmt-notice ul.nt-list li.nt-item a.nt-text i{color:#5483b1!important}#SOHUCS #SOHU_MAIN .module-cmt-header .section-title-w .title-user-w .user-wrap-w{background:#FFF!important}');};
+})();</script><script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script></body></html>
